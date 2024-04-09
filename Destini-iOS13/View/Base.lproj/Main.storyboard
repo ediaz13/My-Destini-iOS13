@@ -87,6 +87,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="choice1Button" destination="9QG-pg-Frw" id="KmK-tG-cD3"/>
                         <outlet property="choice2Button" destination="fwF-55-PpX" id="xI3-ZP-r5j"/>
                         <outlet property="storyLabel" destination="rAa-Vz-35u" id="beF-Dg-X4J"/>
                     </connections>

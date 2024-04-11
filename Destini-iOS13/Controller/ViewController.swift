@@ -24,6 +24,28 @@ class ViewController: UIViewController {
 
     }
     
+    @IBAction func choiceMade(_ sender: UIButton) {
+        let userAnswer = sender.currentTitle
+        
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+        
+    }
+    
+    @objc func updateUI() {
+        storyLabel.text = storyBrain.getStory()
+        
+        var answerChoice1 = storyBrain.getChoice1()
+        var answerChoice2 = storyBrain.getChoice2()
+        
+        //Need to fetch the answers and update the button titles using the setTitle method.
+        choice1Button.setTitle(answerChoice1, for: .normal)
+        choice2Button.setTitle(answerChoice2, for: .normal)
+        
+        
+        choice1Button.backgroundColor = UIColor.clear
+        choice2Button.backgroundColor = UIColor.clear
+        
+    }
     
 
 

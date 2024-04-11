@@ -28,6 +28,27 @@ struct StoryBrain {
     func getChoice2() -> String {
         return stories[storyNumber].choice2
     }
+    
+    mutating func checkFirstAnswer(userAnswer: String) -> Bool {
+        //Need to change answer to rightAnswer here.
+        if userAnswer == stories[storyNumber].choice1 {
+            storyNumber += 1
+            return true
+        } else {
+            storyNumber += 1
+            return false
+        }
+    }
+    
+    mutating func nextQuestion() -> Int {
+        if storyNumber + 1 < stories.count {
+            storyNumber += 1
+        } else {
+            storyNumber = 0
+        }
+        
+        return storyNumber
+    }
 }
 
     

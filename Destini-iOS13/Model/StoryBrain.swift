@@ -29,13 +29,13 @@ struct StoryBrain {
         return stories[storyNumber].choice2
     }
     
-    mutating func checkFirstAnswer(userAnswer: String) -> Bool {
+    mutating func checkAnswer(userAnswer: String) -> Bool {
         //Need to change answer to rightAnswer here.
         if userAnswer == stories[storyNumber].choice1 {
-            storyNumber += 1
+            storyNumber = 1
             return true
         } else {
-            storyNumber += 1
+            storyNumber = 2
             return false
         }
     }

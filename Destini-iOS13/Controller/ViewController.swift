@@ -25,7 +25,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func choiceMade(_ sender: UIButton) {
-        let userAnswer = sender.currentTitle
+        let userAnswer = sender.currentTitle!
+        
+        if storyBrain.checkAnswer(userAnswer: userAnswer) {
+            print("Yes")
+        } else {
+            print("No")
+        }
+        
+        //storyBrain.nextQuestion()
+        
         
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         
